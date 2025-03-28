@@ -4,6 +4,11 @@ import shutil
 import zipfile
 
 def process_raw_directory():
+    # Change to the directory where the script is located
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    os.chdir(script_dir)
+    print(f"Changed working directory to: {script_dir}")
+    
     # Create processed directory if it doesn't exist
     if not os.path.exists('processed'):
         os.makedirs('processed')
